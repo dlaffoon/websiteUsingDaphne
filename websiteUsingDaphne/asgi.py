@@ -1,5 +1,5 @@
 """
-ASGI config for websiteUsingDapne project.
+ASGI config for websiteUsingDaphne project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -15,7 +15,7 @@ from channels.auth import AuthMiddlewareStack
 from chat import routing  # Replace with your app's routing module
 
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'websiteUsingDapne.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'websiteUsingDaphne.settings')
 
 application = ProtocolTypeRouter({
     # Just HTTP for now. (We can add other protocols later.)    
