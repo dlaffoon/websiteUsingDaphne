@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chat'
 ]
+
+# this tells the app where to start
+ASGI_APPLICATION = 'websiteUsingDapne.asgi.application'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +57,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'websiteUsingDapne.urls'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer', #only for testing not production
+    },
+}
+
 
 TEMPLATES = [
     {
